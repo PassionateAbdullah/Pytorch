@@ -67,7 +67,8 @@ For example:
 If the batch size is 64 and there are 10 classes, pred will have the shape [64, 10].
 Each row corresponds to a sample in the batch, and each column corresponds to a class.
 
-#Why Use model.eval() Before This?
+# Why Use model.eval() Before This?
+
 The model is set to evaluation mode using model.eval() before the test loop.
 Purpose:
 Disables behaviors specific to training (e.g., dropout, batch normalization updates) to ensure consistent and accurate results during testing.
