@@ -1,0 +1,18 @@
+What Happens in pred = model(X)?
+Forward Propagation:
+
+The input data X (e.g., images or feature vectors) is passed through the model.
+The model is defined earlier (e.g., NeuralNetwork) and contains layers like Flatten, Linear, and activation functions (ReLU).
+The input tensor flows through these layers sequentially, and the model computes the output predictions for each sample in X.
+pred:
+
+pred is the raw output (logits) produced by the model. These logits are not yet probabilities but are scores indicating how likely each class is for each input sample.
+For example:
+
+If the batch size is 64 and there are 10 classes, pred will have the shape [64, 10].
+Each row corresponds to a sample in the batch, and each column corresponds to a class.
+
+Why Use model.eval() Before This?
+The model is set to evaluation mode using model.eval() before the test loop.
+Purpose:
+Disables behaviors specific to training (e.g., dropout, batch normalization updates) to ensure consistent and accurate results during testing.
