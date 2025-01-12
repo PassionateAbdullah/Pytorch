@@ -1,4 +1,4 @@
-torch.utils.data.Dataset and torch.utils.data.DataLoader serve different but complementary purpose
+# torch.utils.data.Dataset and torch.utils.data.DataLoader serve different but complementary purpose
 1. torch.utils.data.Dataset :
 When to Use:
   Custom Dataset: When you have a dataset not already available in libraries like torchvision.datasets or torchtext, you'll define your own dataset class by           subclassing torch.utils.data.Dataset.
@@ -22,7 +22,7 @@ class CustomDataset(Dataset):
         if self.transform:
             sample = self.transform(sample)
         return sample, label
-# Example usage
+Example usage
 import torch
 data = torch.randn(100, 3, 28, 28)  # 100 samples, 3 channels, 28x28 images
 labels = torch.randint(0, 10, (100,))  # 100 random labels (10 classes)
