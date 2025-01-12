@@ -1,4 +1,4 @@
-torch.utils.data.Dataset and torch.utils.data.DataLoader serve different but complementary purpose
+# torch.utils.data.Dataset and torch.utils.data.DataLoader serve different but complementary purpose
 1. torch.utils.data.Dataset :
 When to Use:
   Custom Dataset: When you have a dataset not already available in libraries like torchvision.datasets or torchtext, you'll define your own dataset class by           subclassing torch.utils.data.Dataset.
@@ -22,7 +22,6 @@ class CustomDataset(Dataset):
         if self.transform:
             sample = self.transform(sample)
         return sample, label
-# Example usage
 import torch
 data = torch.randn(100, 3, 28, 28)  # 100 samples, 3 channels, 28x28 images
 labels = torch.randint(0, 10, (100,))  # 100 random labels (10 classes)
@@ -51,8 +50,10 @@ for batch in dataloader:
     print(f"Batch shape: {X.shape}, Labels shape: {y.shape}")
 
 
-Model Evaluation and prediction
-What Happens in pred = model(X)?
+# Model Evaluation and prediction
+
+# What Happens in pred = model(X)?
+
 Forward Propagation:
 
 The input data X (e.g., images or feature vectors) is passed through the model.
@@ -65,7 +66,8 @@ For example:
 
 If the batch size is 64 and there are 10 classes, pred will have the shape [64, 10].
 Each row corresponds to a sample in the batch, and each column corresponds to a class.
-Why Use model.eval() Before This?
+
+# Why Use model.eval() Before This?
 The model is set to evaluation mode using model.eval() before the test loop.
 Purpose:
 Disables behaviors specific to training (e.g., dropout, batch normalization updates) to ensure consistent and accurate results during testing.
